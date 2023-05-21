@@ -1,0 +1,53 @@
+.player-card {
+  margin-bottom: 20px;
+}
+
+.player-img{
+  height: 200px;
+  width: 100%;
+}
+
+.player-card {
+
+  object-fit: cover;
+}
+
+.player-card .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.player-card .card-text {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.player-card .player-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.player-card .player-link:hover {
+  text-decoration: underline;
+}
+
+/* Player list heading styles */
+.player-list-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Player details container styles */
+.player-details-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.player-details-container p {
+  font-size: 16px;
+  color: #888888;
+}
