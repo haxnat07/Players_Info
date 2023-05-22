@@ -11,9 +11,7 @@ const HomeDetail = () => {
   useEffect(() => {
     const fetchPlayer = async () => {
       try {
-        const response = await axios.get(
-          `/api/player/${id}/`
-        );
+        const response = await axios.get(`/api/player/${id}/`);
         setPlayer(response.data);
       } catch (error) {
         console.error(error);
@@ -44,6 +42,16 @@ const HomeDetail = () => {
                   <Card.Text>#{player.number}</Card.Text>
                   <Card.Text>{player.position}</Card.Text>
                   <Card.Text>{player.team}</Card.Text>
+                  <Card.Text>
+                    <a
+                      href={player.social_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white"
+                    >
+                      {player.social_url}
+                    </a>
+                  </Card.Text>
                 </Card.Body>
               </center>
             </Card>
@@ -154,7 +162,9 @@ const HomeDetail = () => {
                             )}
                             {stats.earned_run_average && (
                               <tr>
-                                <td className="table-label">Earned Run Average</td>
+                                <td className="table-label">
+                                  Earned Run Average
+                                </td>
                                 <td>{stats.earned_run_average}</td>
                               </tr>
                             )}
@@ -164,27 +174,33 @@ const HomeDetail = () => {
                                 <td>{stats.strikeouts}</td>
                               </tr>
                             )}
-                             {stats.pitches && (
+                            {stats.pitches && (
                               <tr>
                                 <td className="table-label">Pitches</td>
                                 <td>{stats.pitches}</td>
                               </tr>
                             )}
-                             {stats.strikeouts_9innings && (
+                            {stats.strikeouts_9innings && (
                               <tr>
-                                <td className="table-label">Strikeouts/9innings</td>
+                                <td className="table-label">
+                                  Strikeouts/9innings
+                                </td>
                                 <td>{stats.strikeouts_9innings}</td>
                               </tr>
                             )}
                             {stats.strikeouts_walks && (
                               <tr>
-                                <td className="table-label">Strikeouts/Walks</td>
+                                <td className="table-label">
+                                  Strikeouts/Walks
+                                </td>
                                 <td>{stats.strikeouts_walks}</td>
                               </tr>
                             )}
-                             {stats.batting_average_allowed && (
+                            {stats.batting_average_allowed && (
                               <tr>
-                                <td className="table-label">Batting Average Allowed</td>
+                                <td className="table-label">
+                                  Batting Average Allowed
+                                </td>
                                 <td>{stats.batting_average_allowed}</td>
                               </tr>
                             )}
@@ -264,18 +280,6 @@ const HomeDetail = () => {
                             <td>{injuries.injury}</td>
                           </tr>
                         ))}
-                                                {player.facebook_url && (
-                          <tr>
-                            <td className="table-label">Facebook</td>
-                            <td>
-                              <iframe
-                                src={player.facebook_url}
-                                title="Facebook"
-                                className="social-account-iframe"
-                              ></iframe>
-                            </td>
-                          </tr>
-                        )}
                       </tbody>
                     </Table>
                   </div>

@@ -8,7 +8,7 @@ class Player(models.Model):
     position = models.CharField(max_length=50, null=True, blank=True)
     team = models.CharField(max_length=50, null=True, blank=True)
     image = models.ImageField(upload_to='media/', null=True, blank=True)
-    facebook_url = models.URLField(null=True, blank=True)
+    social_url = models.URLField(null=True, blank=True)
 
     def __str__(self):
         return str(self.name)
