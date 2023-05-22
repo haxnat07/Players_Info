@@ -264,6 +264,18 @@ const HomeDetail = () => {
                             <td>{injuries.injury}</td>
                           </tr>
                         ))}
+                                                {player.facebook_url && (
+                          <tr>
+                            <td className="table-label">Facebook</td>
+                            <td>
+                              <iframe
+                                src={player.facebook_url}
+                                title="Facebook"
+                                className="social-account-iframe"
+                              ></iframe>
+                            </td>
+                          </tr>
+                        )}
                       </tbody>
                     </Table>
                   </div>
