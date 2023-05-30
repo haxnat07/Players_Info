@@ -3,7 +3,7 @@
 }
 
 .player-details-container {
-  background-color: #f9f9f9;
+  background-color: #ffff;
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -36,6 +36,31 @@
   border-radius: 50%;
   margin-bottom: 10px;
 }
+
+.breadcrumb-link {
+  margin-bottom: 10px;
+}
+
+.breadcrumb-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumb-link a:hover {
+  text-decoration: underline;
+}
+.nav-tabs .nav-link.active {
+  color: #000;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+  font-size: 24px;
+  font-weight: 600;
+}
+.nav-tabs .nav-link{
+  color: #000;
+  font-size: 22px;
+}
+
 
 @media (max-width: 576px) {
   .player-image {

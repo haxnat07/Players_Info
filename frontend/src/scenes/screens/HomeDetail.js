@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Tab, Nav, Row, Col, Card, Table, Container } from "react-bootstrap";
 import "../styling/HomeDetail.css";
@@ -7,6 +7,7 @@ import "../styling/HomeDetail.css";
 const HomeDetail = () => {
   const { id } = useParams();
   const [player, setPlayer] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPlayer = async () => {
@@ -21,6 +22,10 @@ const HomeDetail = () => {
     fetchPlayer();
   }, [id]);
 
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   if (!player) {
     return <div>Loading...</div>;
   }
@@ -29,7 +34,7 @@ const HomeDetail = () => {
     <Container className="main">
       <div className="player-details-container">
         <Row>
-          <Col xs={12} md={6} lg={6}>
+          <Col xs={12} md={4} lg={4}>
             <Card className="player-card">
               <center>
                 <Card.Img
@@ -56,7 +61,7 @@ const HomeDetail = () => {
               </center>
             </Card>
           </Col>
-          <Col xs={12} md={6} lg={6}>
+          <Col xs={12} md={8} lg={8}>
             <Tab.Container defaultActiveKey="info">
               <Nav variant="tabs" className="player-tabs">
                 <Nav.Item>
@@ -70,6 +75,12 @@ const HomeDetail = () => {
                 </Nav.Item>
               </Nav>
               <Tab.Content>
+                {/* 
+                <div className="breadcrumb-link">
+                  <Link to="#" onClick={handleGoBack}>
+                     Back to Previous Page
+                  </Link>
+                </div>*/}
                 <Tab.Pane eventKey="info">
                   <div className="tab-content">
                     <Table striped bordered responsive>

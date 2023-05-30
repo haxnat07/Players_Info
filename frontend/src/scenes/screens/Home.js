@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import "../styling/Home.css";
 
 const PlayerList = () => {
@@ -10,7 +10,7 @@ const PlayerList = () => {
   useEffect(() => {
     const fetchPlayers = async () => {
       try {
-        const response = await axios.get('/api/player/');
+        const response = await axios.get("/api/player/");
         setPlayers(response.data);
       } catch (error) {
         console.error(error);
@@ -22,24 +22,22 @@ const PlayerList = () => {
 
   return (
     <Container>
-      <h2 className="player-list-heading">Player List</h2>
+      <h2 className="player-list-heading text-center">Players List</h2>
       <Row>
         {players.map((player) => (
-          <Col md={3} sm={6} key={player.id}>
-            <Card className="player-card">
-              <Card.Img variant="top" src={player.image} className="player-img"/>
-              <Card.Body>
-                <Card.Title>{player.name}</Card.Title>
-                <Card.Text>
-                  Number: {player.number}<br />
-                  Position: {player.position}<br />
-                  Team: {player.team}
-                </Card.Text>
-                <Link to={`/player/${player.id}`} className="player-link">
-                  View Details
-                </Link>
-              </Card.Body>
-            </Card>
+          <Col md={4} className="mb-2" key={player.id}>
+            <Link to={`/player/${player.id}`}>
+              <div className="profile-card-2">
+                <img src={player.image} alt="profile-image" />
+                <div className="profile-name">{player.name}</div>
+                <div className="profile-username">
+                  #{player.number} {player.position}
+                </div>
+                <div className="profile-icons">
+                  <div className="player-link">{player.team}</div>
+                </div>
+              </div>
+            </Link>
           </Col>
         ))}
       </Row>
