@@ -30,10 +30,10 @@ const PlayerList = () => {
               <div className="profile-card-2">
                 <img src={player.image} alt="profile-image" />
                 <div className="profile-name">{player.name}</div>
-                <div className="profile-username">
-                  #{player.number} {player.position}
-                </div>
-                <div className="profile-icons">
+                <div className="profile-content">
+                  <div className="profile-username">
+                    #{player.number} {player.position}
+                  </div>
                   <div className="player-link">{player.team}</div>
                 </div>
               </div>
@@ -41,7 +41,7 @@ const PlayerList = () => {
           </Col>
         ))}
       </Row>
-      <div className="player-details-container">
+      <div className="player-details-container text-center mt-4">
         <p>Select a player from the list to view details.</p>
       </div>
     </Container>

@@ -20,44 +20,42 @@
   height: auto;
 }
 
+.profile-card-2 .profile-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  background: rgba(0, 0, 0, 0.6); 
+  color: #FFF; 
+  padding-top: 7px; 
+  padding-left: 30px;
+  transition: all linear 0.25s;
+}
+
 .profile-card-2 .profile-name {
   position: absolute;
   left: 30px;
   bottom: 70px;
   font-size: 30px;
   color: #FFF;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 20px rgba(0, 0, 0);
   font-weight: bold;
   transition: all linear 0.25s;
 }
 
-.profile-card-2 .profile-icons {
-  position: absolute;
-  bottom: 10px;
-  left: 25px;
-  color: #FFF;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  transition: all linear 0.25s;
-}
-
 .profile-card-2 .profile-username {
-  position: absolute;
-  bottom: 40px;
-  left: 30px;
-  color: #000;
   font-size: 18px;
-  font-weight: 700;
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-  transition: all linear 0.25s;
+  font-weight: 800;
+ /* margin-bottom: 5px;  Add some space between elements */
 }
 
 .profile-card-2 .player-link {
-  margin: 5px;
-  color: #000;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
+  margin-bottom: 10px;
 }
+
 
 .profile-card-2:hover img {
   filter: grayscale(100%);
@@ -73,4 +71,14 @@
 
 .profile-card-2:hover .profile-icons {
   right: 20px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 990px){
+  .profile-card-2 .profile-name{
+    font-size: 20px;
+  }
+  .profile-card-2 .profile-username {
+    font-size: 16px;
+    font-weight: 800;
+  }
 }
